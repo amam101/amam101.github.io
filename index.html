@@ -3,15 +3,329 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aman Sharma — Portfolio</title>
-  <meta name="description" content="Portfolio of Aman Sharma">
+  <title>Aman Sharma — AI for the Edge</title>
+  <meta name="description" content="Aman Sharma, AI Research Engineer. Making server-scale language and multimodal models run on phones, laptops and robots.">
+  <meta name="theme-color" content="#05080b">
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "cyan"; } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/loop-diagram.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <main>
-    <h1>Aman Sharma</h1>
-    <p>Portfolio coming soon.</p>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="nav-mark" href="#top" aria-label="Aman Sharma, home">AS<span>/</span>edge</a>
+    <nav class="nav-links">
+      <div class="theme-switch" role="group" aria-label="Colour theme">
+        <button type="button" data-theme-choice="cyan" aria-label="Cyan theme"></button>
+        <button type="button" data-theme-choice="green" aria-label="Green theme"></button>
+        <button type="button" data-theme-choice="ember" aria-label="Ember theme"></button>
+      </div>
+      <a href="#approach">Approach</a>
+      <a href="#work">Work</a>
+      <a href="#research">Research</a>
+      <a href="#path">Path</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span>AI Research Engineer · EdgeRunner AI · Washington, D.C.</p>
+        <h1>Frontier intelligence, <em>small enough</em> to ride on a mobile phone, a laptop or a small robot.</h1>
+        <p class="lede">
+          I make server-side large language and multimodal models (vision, language, audio)
+          run on the devices that need them: mobile phones, laptops and robot agents.
+          Offline, on-device, and as accurate as the big ones.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">See the work</a>
+          <a class="btn btn-ghost" href="https://bit.ly/4jXyZgg" target="_blank" rel="noopener">Résumé ↗</a>
+        </div>
+      </div>
+      <figure class="hero-visual">
+        <div class="stage" id="stage" data-phase="online" role="img"
+             aria-label="A cloud server runs a large model for a phone, laptop, humanoid robot and drone over Wi-Fi. The connection drops and the devices lose their intelligence. The model is compressed, ported onto each device, and they work again with no Wi-Fi.">
+          <div class="hud" aria-hidden="true">
+            <span class="hud-step" id="stage-step">01 //</span>
+            <span class="hud-label" id="stage-label">CLOUD-DEPENDENT AI</span>
+            <span class="hud-bars"><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+
+          <svg class="links" viewBox="0 0 1000 1000" aria-hidden="true">
+            <path d="M500 462 V510 H125 V575" />
+            <path d="M500 462 V510 H375 V575" />
+            <path d="M500 462 V510 H625 V575" />
+            <path d="M500 462 V510 H875 V575" />
+          </svg>
+
+          <div class="server" aria-hidden="true">
+            <div class="tint"><img src="assets/images/hero/server.jpg" alt=""></div>
+            <span class="tag-cloud">CLOUD SERVER</span>
+          </div>
+          <div class="brain" aria-hidden="true">
+            <span class="rings"><i></i><i></i><i></i></span>
+            <div class="tint"><img src="assets/images/hero/brain.jpg" alt=""></div>
+          </div>
+
+          <div class="device is-cloud" style="--x: 12.5; --w: 10" aria-hidden="true">
+            <svg class="wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1.4"/><path class="slash" d="M3 3l18 18"/></svg>
+            <div class="tint"><img src="assets/images/hero/phone.jpg" alt=""></div>
+            <span class="chip"></span>
+          </div>
+          <div class="device is-cloud" style="--x: 37.5; --w: 20" aria-hidden="true">
+            <svg class="wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1.4"/><path class="slash" d="M3 3l18 18"/></svg>
+            <div class="tint"><img src="assets/images/hero/laptop.jpg" alt=""></div>
+            <span class="chip"></span>
+          </div>
+          <div class="device is-cloud" style="--x: 62.5; --w: 10.5" aria-hidden="true">
+            <svg class="wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1.4"/><path class="slash" d="M3 3l18 18"/></svg>
+            <div class="tint"><img src="assets/images/hero/humanoid.jpg" alt=""></div>
+            <span class="chip"></span>
+          </div>
+          <div class="device is-cloud" style="--x: 87.5; --w: 20" aria-hidden="true">
+            <svg class="wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1.4"/><path class="slash" d="M3 3l18 18"/></svg>
+            <div class="tint"><img src="assets/images/hero/drone.jpg" alt=""></div>
+            <span class="chip"></span>
+          </div>
+
+          <!-- One small model per device; JS flies each from the server to its device -->
+          <span class="mini" style="--tx: 12.5" aria-hidden="true"><span class="tint"><img src="assets/images/hero/brain.jpg" alt=""></span></span>
+          <span class="mini" style="--tx: 37.5" aria-hidden="true"><span class="tint"><img src="assets/images/hero/brain.jpg" alt=""></span></span>
+          <span class="mini" style="--tx: 62.5" aria-hidden="true"><span class="tint"><img src="assets/images/hero/brain.jpg" alt=""></span></span>
+          <span class="mini" style="--tx: 87.5" aria-hidden="true"><span class="tint"><img src="assets/images/hero/brain.jpg" alt=""></span></span>
+        </div>
+      </figure>
+    </section>
+
+    <section class="stats" aria-label="Highlights">
+      <div class="stat" data-reveal>
+        <span class="stat-num">20B</span>
+        <span class="stat-text">model at GPT-5 parity on military tasks, running entirely on the edge</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat-num">30B<i>≈</i>frontier</span>
+        <span class="stat-text">on-prem agent on secure local hardware matched a frontier server model</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat-num">30 FPS</span>
+        <span class="stat-text">camera + LiDAR perception on an autonomous car's NVIDIA AGX</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat-num">4</span>
+        <span class="stat-text">arXiv papers on edge LLMs, distillation and model behaviour</span>
+      </div>
+    </section>
+
+    <!-- Approach: sticky edge map -->
+    <section class="section approach" id="approach">
+      <div class="section-head">
+        <span class="mono label">01 — Approach</span>
+        <h2>From the server rack <em>to the edge.</em></h2>
+      </div>
+      <div class="approach-grid">
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <span class="mono step-num">/01</span>
+            <h3>Distill</h3>
+            <p>On-policy distillation teaches a small model to answer like a much larger one. With EDGE-OPD, the context it would normally look up is built into its weights, so it stays sharp offline.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="mono step-num">/02</span>
+            <h3>Compress</h3>
+            <p>Block sparsity, token pruning, lottery-ticket sub-networks, LoRA, quantization, TensorRT: the cuts that make a Transformer fit the hardware and run in real time.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="mono step-num">/03</span>
+            <h3>Measure</h3>
+            <p>Benchmarks, gold sets and evaluation pipelines for military, agentic, cyber and general capability, wired straight into training so every round is scored.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="mono step-num">/04</span>
+            <h3>Deploy</h3>
+            <p>Onto ground robots and quadrupeds through ROS&nbsp;2 (<a class="inline-link" href="https://www.edgerunnerai.com/news/edgerunner-and-army-research-laboratory-collaborate-to-bring-high-level-intelligence-to-the-edge-for-heterogeneous-autonomous-military-platforms" target="_blank" rel="noopener">with the US Army Research Laboratory ↗</a>), onto UAVs, laptops and phones, and onto secure local hardware with no internet at all.</p>
+          </li>
+        </ol>
+        <div class="edge-map">
+          <div id="edge-diagram"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="section-head">
+        <span class="mono label">02 — Field work</span>
+        <h2>Models that left the lab <em>and went somewhere.</em></h2>
+      </div>
+      <div class="work-grid">
+        <article class="card card-wide" data-reveal>
+          <div class="card-top"><span class="tag">Robotics · VLM</span><span class="mono muted">EdgeRunner × US Army Research Laboratory</span></div>
+          <h3><a class="card-title-link" href="https://www.edgerunnerai.com/news/edgerunner-and-army-research-laboratory-collaborate-to-bring-high-level-intelligence-to-the-edge-for-heterogeneous-autonomous-military-platforms" target="_blank" rel="noopener">Robots you can talk to, with no cloud behind them</a></h3>
+          <p>Deployed multimodal vision-language models fully on-device on a Clearpath Warthog ground robot and a Ghost Robotics Vision 60 quadruped. The robots perceive and explain their surroundings and take plain-language commands through ROS&nbsp;2. Fine-tuned Edgerunner-Gemma-4b for scene understanding and tool calling, outperforming Gemma-4-light and Qwen3.6-35B.</p>
+          <a class="card-link" href="https://www.edgerunnerai.com/news/edgerunner-and-army-research-laboratory-collaborate-to-bring-high-level-intelligence-to-the-edge-for-heterogeneous-autonomous-military-platforms" target="_blank" rel="noopener">EdgeRunner × Army Research Laboratory: read the story ↗</a>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card-top"><span class="tag">LLM · RL</span><span class="mono muted">EdgeRunner AI</span></div>
+          <div class="card-metric">GPT-5<small>parity</small></div>
+          <h3>EdgeRunner 20B</h3>
+          <p>Trained the EdgeRunner Tactical models (1.5B–120B) with SFT, LoRA, distillation and RL (DPO, PPO, GRPO), reaching GPT-5 parity on military tasks while running on the edge.</p>
+          <a class="card-link" href="https://arxiv.org/abs/2510.26550" target="_blank" rel="noopener">arXiv:2510.26550 ↗</a>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card-top"><span class="tag">Agents</span><span class="mono muted">On-prem · CUI data</span></div>
+          <div class="card-metric">30B<small>≈ frontier</small></div>
+          <h3>A self-improving analysis agent</h3>
+          <p>Architected an on-prem agentic data-analysis system that evaluates harness and model together in a sandbox, improving tools, skills and memory every round, until a 30B model matched a frontier server model.</p>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card-top"><span class="tag">Vision · UAV</span><span class="mono muted">Defense</span></div>
+          <div class="card-metric">Real-time<small>on-device</small></div>
+          <h3>Eyes on drones</h3>
+          <p>Built a data collection and auto-annotation pipeline, then trained and deployed on-device vision models on UAVs for real-time detection and tracking of tanks and drones.</p>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card-top"><span class="tag">Autonomy</span><span class="mono muted">IIIT Delhi · ALIVE</span></div>
+          <div class="card-metric">30 FPS<small>41% mAP</small></div>
+          <h3>Perception for a self-driving car</h3>
+          <p>Camera + LiDAR multi-obstacle detection and tracking, optimized with TorchScript and TensorRT for the vehicle's NVIDIA AGX, with sim-to-real transfer through self-training and domain adaptation.</p>
+          <a class="card-link" href="https://sites.google.com/iiitd.ac.in/iiitd-alive/home" target="_blank" rel="noopener">ALIVE project site ↗</a>
+        </article>
+
+        <article class="card" data-reveal>
+          <div class="card-top"><span class="tag">Efficient ML</span><span class="mono muted">University of Maryland</span></div>
+          <div class="card-metric">2×<small>speedup</small></div>
+          <h3>Leaner Transformers</h3>
+          <p>Cut the cost of a base Transformer for multimodal LLMs by 50% with a hardware-friendly variant, and found a lottery-ticket sub-network running 2× faster with negligible accuracy loss.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="section" id="research">
+      <div class="section-head">
+        <span class="mono label">03 — Research</span>
+        <h2>Papers.</h2>
+      </div>
+      <ul class="pubs">
+        <li data-reveal>
+          <a href="https://arxiv.org/abs/2606.13705" target="_blank" rel="noopener">
+            <span class="mono pub-year">2026</span>
+            <span class="pub-title">Can Editing 1 Neuron Fix Repetition Loops in LLMs?</span>
+            <span class="pub-venue mono">arXiv:2606.13705 ↗</span>
+          </a>
+        </li>
+        <li data-reveal>
+          <a href="https://arxiv.org/abs/2605.23493" target="_blank" rel="noopener">
+            <span class="mono pub-year">2026</span>
+            <span class="pub-title">EDGE-OPD: Internalizing Privileged Context with Evidence Guided On-Policy Distillation</span>
+            <span class="pub-venue mono">arXiv:2605.23493 ↗</span>
+          </a>
+        </li>
+        <li data-reveal>
+          <a href="https://arxiv.org/abs/2603.10012" target="_blank" rel="noopener">
+            <span class="mono pub-year">2026</span>
+            <span class="pub-title">Measuring and Eliminating Refusals in Military Large Language Models</span>
+            <span class="pub-venue mono">arXiv:2603.10012 ↗</span>
+          </a>
+        </li>
+        <li data-reveal>
+          <a href="https://arxiv.org/abs/2510.26550" target="_blank" rel="noopener">
+            <span class="mono pub-year">2025</span>
+            <span class="pub-title">EdgeRunner 20B: Military Task Parity with GPT-5 while Running on the Edge</span>
+            <span class="pub-venue mono">arXiv:2510.26550 ↗</span>
+          </a>
+        </li>
+        <li data-reveal>
+          <a href="https://doi.org/10.1093/database/baaa077" target="_blank" rel="noopener">
+            <span class="mono pub-year">2020</span>
+            <span class="pub-title">RecipeDB: a resource for exploring recipes</span>
+            <span class="pub-venue mono">Database (Oxford) ↗</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Path -->
+    <section class="section" id="path">
+      <div class="section-head">
+        <span class="mono label">04 — Path</span>
+        <h2>Six years of putting <em>models on machines.</em></h2>
+      </div>
+      <ol class="timeline">
+        <li data-reveal><span class="mono t-date">2024 — now</span><span class="t-role">AI Research Engineer</span><span class="t-org">EdgeRunner AI, Washington D.C.</span></li>
+        <li data-reveal><span class="mono t-date">2023 — 2024</span><span class="t-role">Independent Researcher, Efficient ML</span><span class="t-org">University of Maryland</span></li>
+        <li data-reveal><span class="mono t-date">2023 — 2024</span><span class="t-role">Teaching Assistant, RL &amp; Computer Vision</span><span class="t-org">University of Maryland</span></li>
+        <li data-reveal><span class="mono t-date">2023</span><span class="t-role">ML / Computer Vision Intern</span><span class="t-org">VecTech Inc.</span></li>
+        <li data-reveal><span class="mono t-date">2022 — 2023</span><span class="t-role">Graduate Research Assistant, Computer Vision</span><span class="t-org">Bio-Imaging &amp; Machine Vision Lab, UMD</span></li>
+        <li data-reveal><span class="mono t-date">2020 — 2022</span><span class="t-role">Perception Research Engineer</span><span class="t-org">Autonomous Vehicle Project (<a class="inline-link" href="https://sites.google.com/iiitd.ac.in/iiitd-alive/home" target="_blank" rel="noopener">ALIVE ↗</a>), IIIT Delhi</span></li>
+        <li data-reveal><span class="mono t-date">2020</span><span class="t-role">AI Research Engineer</span><span class="t-org">Secure Meters</span></li>
+        <li data-reveal><span class="mono t-date">2020</span><span class="t-role">Deep Learning Engineer, Driver Monitoring</span><span class="t-org">HMI Labs, IIIT Delhi · <a class="inline-link" href="https://drive.google.com/file/d/1nnz5aoNQ0Gc9NwjBIOqu2eBjjT6ANuxd/view" target="_blank" rel="noopener">driver-distraction app demo ↗</a></span></li>
+        <li data-reveal class="t-edu"><span class="mono t-date">2022 — 2024</span><span class="t-role">M.S. Robotics</span><span class="t-org">University of Maryland, College Park</span></li>
+        <li data-reveal class="t-edu"><span class="mono t-date">2016 — 2020</span><span class="t-role">B.Tech</span><span class="t-org">Dehradun Institute of Technology</span></li>
+      </ol>
+    </section>
+
+    <!-- Toolkit -->
+    <section class="section toolkit" aria-labelledby="toolkit-title">
+      <div class="section-head">
+        <span class="mono label">05 — Toolkit</span>
+        <h2 id="toolkit-title">What's in the bag.</h2>
+      </div>
+      <div class="tool-groups">
+        <div class="tool-group" data-reveal>
+          <h3 class="mono">Training</h3>
+          <ul class="chips"><li>SFT</li><li>LoRA</li><li>DPO · PPO · GRPO</li><li>On-policy distillation</li><li>Data synthesis</li></ul>
+        </div>
+        <div class="tool-group" data-reveal>
+          <h3 class="mono">Libraries</h3>
+          <ul class="chips"><li>verl</li><li>Axolotl</li><li>TRL</li><li>Inspect AI</li></ul>
+        </div>
+        <div class="tool-group" data-reveal>
+          <h3 class="mono">Efficiency</h3>
+          <ul class="chips"><li>Quantization</li><li>Block sparsity</li><li>Token pruning</li><li>Lottery tickets</li><li>TensorRT</li><li>TorchScript</li></ul>
+        </div>
+        <div class="tool-group" data-reveal>
+          <h3 class="mono">Robotics</h3>
+          <ul class="chips"><li>ROS 2</li><li>NVIDIA AGX / Jetson</li><li>Camera + LiDAR</li><li>Sim-to-real</li><li>Tracking</li></ul>
+        </div>
+        <div class="tool-group" data-reveal>
+          <h3 class="mono">Stack</h3>
+          <ul class="chips"><li>Python</li><li>C++</li><li>PyTorch</li><li>JAX</li><li>Detectron2</li><li>OpenCV</li><li>Docker</li><li>W&amp;B</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <span class="mono label">06 — Contact</span>
+      <h2>Got a model that's too big <em>for where it needs to run?</em></h2>
+      <a class="contact-mail" href="mailto:amankrsharma3@gmail.com">amankrsharma3@gmail.com</a>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/amansharma-oo7" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://linktr.ee/amankrsharma3" target="_blank" rel="noopener">Linktree ↗</a>
+        <a href="https://bit.ly/4jXyZgg" target="_blank" rel="noopener">Résumé ↗</a>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <span>© 2026 Aman Kr. Sharma</span>
+    <span class="mono">Hand-built. No framework. Runs on anything.</span>
+  </footer>
+
+  <script src="assets/js/loop-diagram.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

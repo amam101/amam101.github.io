@@ -1,0 +1,76 @@
+.loop-diagram {
+  --ld-line: rgba(255, 255, 255, 0.75);
+  --ld-accent: #ff2a3d;
+  --ld-bg: #000;
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.ld-trace {
+  fill: none;
+  stroke: var(--ld-line);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset 1.2s ease-in-out;
+}
+
+.ld-pulse {
+  fill: none;
+  stroke: var(--ld-accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.ld-hub rect,
+.ld-ring {
+  fill: var(--ld-bg);
+  stroke: var(--ld-line);
+  stroke-width: 1.4;
+  transition: stroke 0.3s, filter 0.3s;
+}
+
+.ld-hub-label {
+  fill: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.ld-hub-sub {
+  fill: var(--ld-line);
+  font-size: 8px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.ld-glyph polygon {
+  fill: none;
+  stroke: var(--ld-line);
+  stroke-width: 1;
+}
+
+.ld-glyph circle {
+  fill: var(--ld-line);
+}
+
+.ld-label {
+  fill: var(--ld-line);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-anchor: middle;
+  text-transform: uppercase;
+  transition: fill 0.3s;
+}
+
+.ld-node.is-active .ld-ring {
+  stroke: var(--ld-accent);
+  stroke-width: 2.4;
+  filter: url(#ld-glow);
+}
+
+.ld-node.is-active .ld-label {
+  fill: var(--ld-accent);
+}

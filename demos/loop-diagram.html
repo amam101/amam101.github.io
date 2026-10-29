@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loop Diagram Demo</title>
+  <link rel="stylesheet" href="../assets/css/loop-diagram.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #000;
+      color: #eee;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    @media (max-width: 800px) { .layout { grid-template-columns: 1fr; } }
+    h1 { font-size: 1.1rem; margin: 0 0 0.5rem; }
+    p { color: #999; font-size: 0.9rem; margin: 0 0 1rem; }
+    textarea {
+      width: 100%;
+      height: 60vh;
+      background: #111;
+      color: #ddd;
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 0.75rem;
+      font: 12px/1.5 ui-monospace, Menlo, monospace;
+    }
+    button {
+      margin-top: 0.75rem;
+      background: #ff2a3d;
+      color: #fff;
+      border: 0;
+      border-radius: 6px;
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    #error { color: #ff6b78; font-size: 0.85rem; min-height: 1.2em; }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div id="diagram"></div>
+    <div>
+      <h1>Edit the diagram</h1>
+      <p>Change labels, move nodes (x, y), add or remove entries, then press Apply (or Cmd+Enter).</p>
+      <textarea id="config" spellcheck="false"></textarea>
+      <button id="apply">Apply</button>
+      <div id="error"></div>
+    </div>
+  </div>
+
+  <script src="../assets/js/loop-diagram.js"></script>
+  <script>
+    const config = {
+      hub: { label: "Aman Sharma", sublabel: "Portfolio", x: 0, y: 0, w: 170, h: 70 },
+      nodes: [
+        { id: "data", label: "Data Analysis", x: 380, y: 150 },
+        { id: "ml", label: "Machine Learning", x: 280, y: 260 },
+        { id: "viz", label: "Dashboards", x: 170, y: 190 },
+        { id: "eng", label: "Pipelines", x: 120, y: 320 }
+      ],
+      travelMs: 1100,
+      holdMs: 700
+    };
+
+    const box = document.getElementById("config");
+    const error = document.getElementById("error");
+    box.value = JSON.stringify(config, null, 2);
+    const diagram = LoopDiagram.create(document.getElementById("diagram"), config);
+
+    function apply() {
+      try {
+        diagram.update(JSON.parse(box.value));
+        error.textContent = "";
+      } catch (e) {
+        error.textContent = e.message;
+      }
+    }
+    document.getElementById("apply").addEventListener("click", apply);
+    box.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) apply();
+    });
+  </script>
+</body>
+</html>
